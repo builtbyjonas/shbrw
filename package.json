@@ -32,11 +32,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/binary-blazer/shbrw.git"
+        "url": "git+https://github.com/builtbyjonas/shbrw.git"
     },
-    "homepage": "https://github.com/binary-blazer/shbrw#readme",
+    "homepage": "https://github.com/builtbyjonas/shbrw#readme",
     "bugs": {
-        "url": "https://github.com/binary-blazer/shbrw/issues"
+        "url": "https://github.com/builtbyjonas/shbrw/issues"
     },
     "scripts": {
         "build": "tsc",
