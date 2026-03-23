@@ -49,7 +49,7 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
-        "electron": "^40.0.0",
+        "electron": "^41.0.3",
         "yargs": "^18.0.0"
     },
     "devDependencies": {
