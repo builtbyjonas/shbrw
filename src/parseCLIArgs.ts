@@ -7,6 +7,7 @@ export function parseCLIArgs(): {
     height: number;
     optimized: boolean;
     noJS: boolean;
+    hideScrollbar: boolean;
 } {
     const argv = yargs(hideBin(process.argv))
         .option("url", {
@@ -29,6 +30,11 @@ export function parseCLIArgs(): {
             type: "boolean",
             default: false,
         })
+        .option("hideScrollbar", {
+            describe: "Hide the overflow and overflow-x scrollbars of the website",
+            type: "boolean",
+            default: false,
+        })
         .strict(false)
         .parseSync();
 
@@ -40,5 +46,6 @@ export function parseCLIArgs(): {
         height,
         optimized: argv.optimized,
         noJS: argv.noJS,
+        hideScrollbar: argv.hideScrollbar,
     };
 }

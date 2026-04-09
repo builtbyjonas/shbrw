@@ -4,7 +4,7 @@ import { APP_NAME, WINDOW_ICON, WINDOW_TITLE } from "./constants.js";
 
 export async function startWindow(
     url: string,
-    options: { width?: number; height?: number; noJS?: boolean },
+    options: { width?: number; height?: number; noJS?: boolean; hideScrollbar?: boolean },
 ): Promise<void> {
     let icon = nativeImage.createFromPath(WINDOW_ICON);
     if (icon.isEmpty()) {
@@ -29,6 +29,12 @@ export async function startWindow(
     });
 
     await win.loadURL(url);
+
+    if (options.hideScrollbar) {
+        await win.webContents.insertCSS(
+            "html, body { overflow: hidden !important; overflow-x: hidden !important; }",
+        );
+    }
 
     win.setTitle(WINDOW_TITLE);
     if (icon) {
